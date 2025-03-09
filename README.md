@@ -1,3 +1,12 @@
+© 2025 Mauro Davoli. All rights reserved.  
+
+This project is open source and can be used, modified, and shared by anyone. However, proper attribution is required. Please give credit to the original author when using or modifying this project.  
+
+For inquiries regarding contributions or collaborations, please contact mdavoli97@gmail.com.
+
+
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
