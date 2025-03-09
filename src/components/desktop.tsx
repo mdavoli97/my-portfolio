@@ -12,8 +12,11 @@ export default function Desktop({
   setIsAppOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   return (
-    <div className="bg-gray-700 max-w-7xl w-full mx-auto h-full rounded-md flex flex-col relative">
-      <div className="h-full bg-[url(/wallpaper.webp)] bg-cover">
+    <div className="bg-gray-700 max-w-7xl max-h-[800px] w-full mx-auto h-full rounded-md flex flex-col relative">
+      <div
+        className="h-full bg-[url(/wallpaper.webp)] bg-cover"
+        id="desktop-area"
+      >
         {children}
       </div>
       <MoveDown

@@ -22,20 +22,25 @@ export default function AppLayout({
   className?: string;
 }) {
   const [isAppOpen, setIsAppOpen] = useState(false);
-  const [width, setWidth] = useState(1200);
-  const [height, setHeight] = useState(700);
+  const [width, setWidth] = useState(1000);
+  const [height, setHeight] = useState(580);
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
 
   const maximizeApp = () => {
-    setWidth(1280);
-    setHeight(779);
+    setWidth(document.getElementById("desktop-area")?.offsetWidth ?? 0);
+    setHeight(document.getElementById("desktop-area")?.offsetHeight ?? 0);
     setX(0);
     setY(0);
   };
 
   return (
-    <main className={cn("bg-gray-900 h-screen p-10 text-white", className)}>
+    <main
+      className={cn(
+        "bg-gray-900 h-screen p-10 hidden xl:flex text-white",
+        className
+      )}
+    >
       <Desktop setIsAppOpen={setIsAppOpen} isAppOpen={isAppOpen}>
         <Rnd
           className={cn("opacity-100 flex transition-opacity duration-400", {
@@ -44,8 +49,8 @@ export default function AppLayout({
           default={{
             x: x,
             y: y,
-            width: 1200,
-            height: 700,
+            width: width,
+            height: height,
           }}
           size={{
             width: width,
@@ -61,7 +66,7 @@ export default function AppLayout({
             setY(d.y);
           }}
           minWidth={800}
-          minHeight={600}
+          minHeight={580}
           bounds={"parent"}
           dragHandleClassName="drag-handle"
         >
