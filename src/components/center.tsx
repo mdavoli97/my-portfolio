@@ -5,13 +5,13 @@ import Link from "next/link";
 export default function Center() {
   return (
     <div className="flex h-full p-5 px-10 bg-zinc-900 rounded-md">
-      <Tabs defaultValue="all" className="w-full">
+      <Tabs defaultValue="portfolio" className="w-full">
         <TabsList className="bg-transparent gap-5">
-          <TabsTrigger value="all">All</TabsTrigger>
-          <TabsTrigger value="music">Music</TabsTrigger>
-          <TabsTrigger value="podcast">Podcast</TabsTrigger>
+          <TabsTrigger value="portfolio">Portfolio</TabsTrigger>
+          <TabsTrigger value="blogs">Blogs</TabsTrigger>
+          <TabsTrigger value="about">About</TabsTrigger>
         </TabsList>
-        <TabsContent value="all">
+        <TabsContent value="portfolio">
           <div className="grid grid-cols-4">
             <Link
               href="/portfolio"
@@ -28,11 +28,11 @@ export default function Center() {
             </Link>
           </div>
         </TabsContent>
-        <TabsContent value="music">
-          All your music will be displayed here.
-        </TabsContent>
-        <TabsContent value="podcast">
-          All your podcast will be displayed here.
+        <TabsContent value="blogs">Blogs</TabsContent>
+        <TabsContent value="about" className="flex flex-col gap-3">
+          Created by Mauro Davoli, this portfolio project combines two of my
+          greatest passions:{" "}
+          <span className="font-bold">Coding and Music.</span>
         </TabsContent>
       </Tabs>
     </div>

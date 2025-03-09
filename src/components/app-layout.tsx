@@ -12,6 +12,7 @@ import Desktop from "./desktop";
 import Footer from "./footer";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
+import RightBar from "./right-bar";
 
 export default function AppLayout({
   children,
@@ -37,8 +38,8 @@ export default function AppLayout({
     <main className={cn("bg-gray-900 h-screen p-10 text-white", className)}>
       <Desktop setIsAppOpen={setIsAppOpen} isAppOpen={isAppOpen}>
         <Rnd
-          className={cn("opacity-100 transition-opacity duration-400", {
-            "opacity-0": !isAppOpen,
+          className={cn("opacity-100 flex transition-opacity duration-400", {
+            "opacity-0 hidden": !isAppOpen,
           })}
           default={{
             x: x,
@@ -66,23 +67,19 @@ export default function AppLayout({
         >
           <section className="bg-black p-2 rounded-md h-full flex flex-col gap-2">
             <Header setIsAppOpen={setIsAppOpen} maximizeApp={maximizeApp} />
-            <div className="h-[82%]">
-              <ResizablePanelGroup direction="horizontal" className="gap-1">
-                <ResizablePanel defaultSize={20} minSize={4}>
-                  <LeftBar />
-                </ResizablePanel>
-                <ResizableHandle />
-                <ResizablePanel defaultSize={60} minSize={40}>
-                  {children}
-                </ResizablePanel>
-                <ResizableHandle />
-                <ResizablePanel defaultSize={20} maxSize={30} minSize={20}>
-                  <div className="flex h-full items-center justify-center p-6 bg-zinc-900 rounded-md">
-                    <span className="font-semibold">Sidebar</span>
-                  </div>
-                </ResizablePanel>
-              </ResizablePanelGroup>
-            </div>
+            <ResizablePanelGroup direction="horizontal" className="gap-1">
+              <ResizablePanel defaultSize={4} className="min-w-16">
+                <LeftBar />
+              </ResizablePanel>
+              <ResizableHandle />
+              <ResizablePanel defaultSize={66} minSize={40}>
+                {children}
+              </ResizablePanel>
+              <ResizableHandle />
+              <ResizablePanel defaultSize={30} maxSize={30} minSize={20}>
+                <RightBar />
+              </ResizablePanel>
+            </ResizablePanelGroup>
             <Footer />
           </section>
         </Rnd>

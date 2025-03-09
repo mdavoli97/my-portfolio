@@ -11,7 +11,9 @@ export default function Desktop({
 }) {
   return (
     <div className="bg-gray-700 container mx-auto h-full rounded-md flex flex-col">
-      <div className="h-full bg-[url(/ardillin.jpeg)] bg-cover">{children}</div>
+      <div className="h-full bg-[url(/wallpaper.webp)] bg-cover">
+        {children}
+      </div>
       <Taskbar setIsAppOpen={setIsAppOpen} isAppOpen={isAppOpen} />
     </div>
   );
