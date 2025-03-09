@@ -13,26 +13,36 @@ import Footer from "./footer";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 
-export default function AppLayout({ children }: { children: React.ReactNode }) {
+export default function AppLayout({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   const [isAppOpen, setIsAppOpen] = useState(true);
   const [width, setWidth] = useState(1200);
   const [height, setHeight] = useState(700);
+  const [x, setX] = useState(0);
+  const [y, setY] = useState(0);
 
   const maximizeApp = () => {
     setWidth(1536);
     setHeight(779);
+    setX(0);
+    setY(0);
   };
 
   return (
-    <main className="bg-gray-900 h-screen p-10 text-white">
+    <main className={cn("bg-gray-900 h-screen p-10 text-white", className)}>
       <Desktop setIsAppOpen={setIsAppOpen} isAppOpen={isAppOpen}>
         <Rnd
           className={cn("opacity-100 transition-opacity duration-400", {
             "opacity-0": !isAppOpen,
           })}
           default={{
-            x: 0,
-            y: 0,
+            x: x,
+            y: y,
             width: 1200,
             height: 700,
           }}
@@ -40,9 +50,14 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
             width: width,
             height: height,
           }}
+          position={{ x: x, y: y }}
           onResize={(e, direction, ref) => {
             setWidth(ref.offsetWidth);
             setHeight(ref.offsetHeight);
+          }}
+          onDrag={(e, d) => {
+            setX(d.x);
+            setY(d.y);
           }}
           minWidth={800}
           minHeight={600}
