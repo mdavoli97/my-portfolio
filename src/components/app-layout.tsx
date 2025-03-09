@@ -28,7 +28,7 @@ export default function AppLayout({
   const [y, setY] = useState(0);
 
   const maximizeApp = () => {
-    setWidth(1536);
+    setWidth(1280);
     setHeight(779);
     setX(0);
     setY(0);
