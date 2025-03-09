@@ -21,7 +21,7 @@ export default function AppLayout({
   children: React.ReactNode;
   className?: string;
 }) {
-  const [isAppOpen, setIsAppOpen] = useState(true);
+  const [isAppOpen, setIsAppOpen] = useState(false);
   const [width, setWidth] = useState(1200);
   const [height, setHeight] = useState(700);
   const [x, setX] = useState(0);
