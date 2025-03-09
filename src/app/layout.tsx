@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import AppLayout from "@/components/app-layout";
+import { ShieldAlert } from "lucide-react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,10 +31,13 @@ export default function RootLayout({
       >
         <AppLayout>{children}</AppLayout>
 
-        <p className="flex xl:hidden text-3xl text-white text-center mt-20">
-          Sorry, this page is not available in this view. Please try resizing
-          your browser window.
-        </p>
+        <div className="p-10 flex-col gap-10 flex xl:hidden ">
+          <ShieldAlert size={64} className="mx-auto my-auto text-white" />
+          <p className="text-2xl text-white text-center self-center max-w-[20rem] mx-auto">
+            Sorry, this page is not available in this view. Please try resizing
+            your browser window or try again on a larger screen.
+          </p>
+        </div>
       </body>
     </html>
   );

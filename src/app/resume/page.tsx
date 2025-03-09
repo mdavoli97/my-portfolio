@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function Page() {
+export default function Resume() {
   return (
     <div className="flex h-full flex-col gap-5 p-6 bg-gradient-to-t from-black to-red-800 rounded-md overflow-y-auto scrollbar-thin scrollbar-thumb-white/50 scrollbar-track-white/10">
       <div className="flex gap-5 h-fit">
@@ -12,7 +12,7 @@ export default function Page() {
           height={200}
         />
         <div className="flex flex-col justify-end gap-5">
-          <p>Portfolio</p>
+          <p>Resume</p>
           <h1 className="text-5xl font-bold text-nowrap">Mauro Davoli</h1>
           <div>
             <p>2025</p>

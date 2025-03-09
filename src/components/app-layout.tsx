@@ -43,8 +43,8 @@ export default function AppLayout({
     >
       <Desktop setIsAppOpen={setIsAppOpen} isAppOpen={isAppOpen}>
         <Rnd
-          className={cn("opacity-100 flex transition-opacity duration-400", {
-            "opacity-0 hidden": !isAppOpen,
+          className={cn("opacity-100 transition-opacity duration-400", {
+            "opacity-0": !isAppOpen,
           })}
           default={{
             x: x,
@@ -69,6 +69,7 @@ export default function AppLayout({
           minHeight={580}
           bounds={"parent"}
           dragHandleClassName="drag-handle"
+          disableDragging={!isAppOpen}
         >
           <section className="bg-black p-2 rounded-md h-full flex flex-col gap-2">
             <Header setIsAppOpen={setIsAppOpen} maximizeApp={maximizeApp} />

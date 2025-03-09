@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { Input } from "./ui/input";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Header({
   setIsAppOpen,
@@ -18,6 +19,8 @@ export default function Header({
   setIsAppOpen: (value: boolean) => void;
   maximizeApp: () => void;
 }) {
+  const { push } = useRouter();
+
   return (
     <header className="grid grid-cols-3 items-center px-4 min-h-12 drag-handle">
       <div>
@@ -34,7 +37,7 @@ export default function Header({
         <div className="flex gap-2 justify-center items-center rounded-3xl bg-zinc-900 p-2 px-3 w-full">
           <Search className="size-7 text-white/70 hover:text-white cursor-pointer" />
           <Input
-            placeholder="What do you want to play?"
+            placeholder="Welcome to my portfolio"
             className="border-none bg-transparent text-white/70 placeholder:text-white placeholder:text-base h-full"
           />
         </div>
@@ -56,7 +59,10 @@ export default function Header({
             className="size-4 text-white/70 hover:text-white cursor-pointer"
           />
           <X
-            onClick={() => setIsAppOpen(false)}
+            onClick={() => {
+              push("/");
+              setIsAppOpen(false);
+            }}
             className="size-5 text-white/70 hover:text-white cursor-pointer"
           />
         </div>

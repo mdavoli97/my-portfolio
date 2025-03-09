@@ -14,7 +14,7 @@ export default function Desktop({
   return (
     <div className="bg-gray-700 max-w-7xl max-h-[800px] w-full mx-auto h-full rounded-md flex flex-col relative">
       <div
-        className="h-full bg-[url(/wallpaper.webp)] bg-cover"
+        className="h-full bg-[url(/wallpaper.jpeg)] bg-cover"
         id="desktop-area"
       >
         {children}
