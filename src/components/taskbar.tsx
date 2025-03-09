@@ -28,7 +28,11 @@ export default function Taskbar({
           />
         </div>
         <div className="flex gap-1">
-          <div className="rounded-md bg-gray-600 p-1.5">
+          <div
+            className={cn("rounded-md bg-gray-600 p-1.5", {
+              "bg-transparent": !isAppOpen,
+            })}
+          >
             <Headphones
               onClick={() => setIsAppOpen(!isAppOpen)}
               className={cn(
