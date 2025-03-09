@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Center() {
   return (
-    <div className="flex h-full p-5 px-10 bg-gray-800 rounded-md">
+    <div className="flex h-full p-5 px-10 bg-zinc-900 rounded-md">
       <Tabs defaultValue="all" className="w-full">
         <TabsList className="bg-transparent gap-5">
           <TabsTrigger value="all">All</TabsTrigger>
