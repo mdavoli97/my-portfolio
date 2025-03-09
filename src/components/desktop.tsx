@@ -12,7 +12,7 @@ export default function Desktop({
   setIsAppOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   return (
-    <div className="bg-gray-700 container mx-auto h-full rounded-md flex flex-col relative">
+    <div className="bg-gray-700 max-w-7xl w-full mx-auto h-full rounded-md flex flex-col relative">
       <div className="h-full bg-[url(/wallpaper.webp)] bg-cover">
         {children}
       </div>

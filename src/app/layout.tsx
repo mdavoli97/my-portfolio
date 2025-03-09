@@ -28,9 +28,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-900`}
       >
-        <AppLayout className="hidden 2xl:flex">{children}</AppLayout>
+        <AppLayout className="hidden xl:flex">{children}</AppLayout>
 
-        <p className="flex 2xl:hidden text-3xl text-white text-center mt-20">
+        <p className="flex xl:hidden text-3xl text-white text-center mt-20">
           Sorry, this page is not available in this view. Please try resizing
           your browser window.
         </p>
